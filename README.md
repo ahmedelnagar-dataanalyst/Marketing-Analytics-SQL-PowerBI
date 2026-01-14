@@ -1,25 +1,87 @@
 ![Dashboard Preview](1.png) 
-# End-to-End Marketing Analytics Project (SQL & Power BI)
-# Project Overview
+📊 Marketing Analytics Dashboard (SQL & Power BI)
+🔍 Project Overview
 
-This project analyzes a dataset of 400,000+ ad events to track the customer journey from impression to purchase. It provides actionable insights into platform performance, audience interests, and conversion rates.
+This project focuses on analyzing marketing performance data to understand user behavior, campaign effectiveness, and sales conversion across different advertising platforms.
 
-# Key Features
-- Data Engineering (SQL): Cleaned and transformed raw data using PostgreSQL. Built views to calculate Conversion Rates and aggregate user behaviors.
+The goal is to transform raw marketing data into actionable insights using SQL for data preparation and Power BI for visualization and storytelling.
 
-- Data Modeling: Implemented a Star Schema to connect multiple tables (Events, Users, Interests, and Campaigns).
+🛠 Tools & Technologies
 
-- Interactive Dashboard: Developed a Power BI report featuring:
+SQL – Data extraction, transformation, and aggregation
 
-- Marketing Funnel: Visualizing the drop-off from 400K impressions to 2031 purchases.
+Power BI – Interactive dashboards and visual analytics
 
-- Interest Breakdown: Analyzing sales distribution across categories like Technology (16.89%) and Art (16.54%).
+DAX – KPI calculations and measures
 
-- Time-Series Analysis: Identifying peak engagement days (Friday).
+Data Visualization Best Practices
 
-# Tools Used
- - Database: PostgreSQL.
+📈 Key Features
 
- - SQL Tool: DBeaver.
+Marketing Funnel Analysis
+(Impressions → Clicks → Likes → Comments → Purchases)
 
- - Visualization: Microsoft Power BI.
+Platform Conversion Comparison
+Facebook vs Instagram conversion rates
+
+Interest-Based Sales Analysis
+Identifying which user interests generate the highest sales
+
+Engagement by Day of Week
+Discovering peak interaction days
+
+Audience Demographics Breakdown
+Gender-based distribution analysis
+
+📊 Key KPIs
+
+Total Impressions
+
+Total Clicks
+
+Total Interactions
+
+Total Purchases
+
+Conversion Rate by Platform
+
+💡 Key Insights
+
+Gaming and Technology interests generate the highest number of purchases
+
+Friday shows the highest user engagement across campaigns
+
+Facebook demonstrates a higher conversion rate compared to Instagram
+
+📌 Business Recommendations
+
+Increase ad spend on high-performing interests such as Gaming and Technology
+
+Schedule major campaigns on Fridays to maximize engagement
+
+Optimize Instagram campaigns to improve conversion efficiency
+
+🗂 Project Structure
+├── sql/
+│   └── marketing_analysis.sql
+├── powerbi/
+│   └── Marketing_Performance_Dashboard.pbix
+├── images/
+│   └── dashboard_screenshots.png
+└── README.md
+
+▶ How to Run the Project
+
+Run the SQL scripts to prepare the dataset
+
+Open the .pbix file using Power BI Desktop
+
+Refresh data if required
+
+Explore dashboards using filters and slicers
+
+👤 Author
+
+Ahmed Elnagar
+Data Analyst
+🔗 GitHub: https://github.com/ahmedelnagar-dataanalyst
