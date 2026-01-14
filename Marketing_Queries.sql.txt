@@ -1,0 +1,40 @@
+CREATE OR REPLACE VIEW master_marketing_report AS
+SELECT 
+    e.event_id,
+    e.event_type,
+    e.day_of_week,
+    e.time_of_day,
+    a.ad_platform,
+    a.ad_type,
+    c."name" AS campaign_name,
+    c.total_budget,
+    u.gender,
+    u."age group",
+    u.country
+FROM ad_events e
+JOIN ads a ON e.ad_id = a.ad_id
+JOIN campaigns c ON a.campaign_id = c.campaign_id
+JOIN users u ON e.user_id = u.user_id;
+
+
+
+CREATE OR REPLACE VIEW platform_performance_summary AS
+SELECT 
+    ad_platform,
+    COUNT(CASE WHEN event_type = 'click' THEN 1 END) AS total_clicks,
+    COUNT(CASE WHEN event_type = 'purchase' THEN 1 END) AS total_purchases,
+    ROUND(COUNT(CASE WHEN event_type = 'purchase' THEN 1 END) * 100.0 / 
+          NULLIF(COUNT(CASE WHEN event_type = 'click' THEN 1 END), 0), 2) AS conversion_rate
+FROM master_marketing_report
+GROUP BY ad_platform;
+
+
+CREATE OR REPLACE VIEW interests_purchase_analysis AS
+SELECT 
+    ui.interests,
+    COUNT(e.event_id) AS total_purchases
+FROM ad_events e
+JOIN user_interests ui ON e.user_id = ui.user_id
+WHERE e.event_type = 'purchase'
+GROUP BY ui.interests;
+
