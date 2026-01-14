@@ -1,3 +1,4 @@
+![Dashboard Preview](1.png) 
 # End-to-End Marketing Analytics Project (SQL & Power BI)
 # Project Overview
 
